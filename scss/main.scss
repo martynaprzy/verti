@@ -1,0 +1,117 @@
+
+$colorBody: #E4E4E4;
+$colorLogo: #FC4887;
+$colorPrimary: #1691C3;
+$colorSecondary: #F2F2F2;
+$colorText: #444;
+$bpMobile: 980px;
+$menuWidth: 300px;
+
+@import "grid";
+@import "normalize";
+@import "layout";
+@import "welcome";
+@import "page-header";
+@import "btn";
+@import "page-nav";
+
+//--------------------------------------
+
+body {
+  overflow-x: hidden;
+}
+
+.articles {
+  display: flex;
+  justify-content: center;
+
+}
+.article {
+  margin: 50px 0;
+  border-radius: 15px;
+  box-shadow: 0 3px 5px 0 rgba(black, 0.1);
+  background: #fff;
+  border: 0;
+  overflow: hidden;
+}
+.article-photo-link {}
+.article-photo-link img {
+  height: auto;
+  width: 100%;
+}
+.article-content {
+  padding: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 300;
+}
+.article-title {
+  font-size: 25px;
+}
+.article-subtitle {
+
+}
+.article-text {}
+
+.mobile-nav-list {
+  position: fixed;
+  width: $menuWidth;
+  height: 100%;
+  background: white;
+  top: 0;
+  left: -$menuWidth;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 20px rgba(black, 0.3);
+}
+.mobile-nav-list a {
+  text-decoration: none;
+  font-weight: bold;
+  color: $colorText;
+  padding: 25px;
+  display: block;
+  border-bottom: 1px solid rgba(black, 0.2);
+}
+.mobile-nav-list a.page-nav-active {
+  background: $colorText;
+  color: #fff;
+}
+.page {
+  overflow: hidden;
+}
+.mobile-nav-list, .page, .page-nav-toggle {
+  transition: 0.5s transform;
+}
+.show-menu {
+  .mobile-nav-list, .page, .page-nav-toggle {
+    //przesuwa
+    transform: translateX($menuWidth);
+  }
+}
+
+
+///
+//
+//@mixin arrow($direction) {
+//  height: 0;
+//  width: 0;
+//
+//  @if $direction == 'up' {
+//    border-right: 20px solid transparent;
+//    border-bottom: 20px solid black;
+//    border-left: 20px solid transparent;
+//  } @else if $direction == 'down' {
+//    border-top: 20px  solid black;
+//    border-right: 20px solid transparent;
+//    border-left: 20px solid transparent;
+//  } @else if $direction == 'left' {
+//    border-top: 20px solid transparent;
+//    border-right: 20px solid black;
+//    border-bottom: 20px solid transparent;
+//  } @else if $direction == 'right' {
+//    border-top: 20px solid transparent;
+//    border-bottom: 20px solid transparent;
+//    border-left: 20px solid black;
+//  }
+//}

@@ -1,0 +1,24 @@
+$gap : 10px;
+$columns : 12;
+$breakpoint : $bpMobile;
+.container {
+  padding-left: $gap;
+  padding-right: $gap;
+  .row {
+    margin-left: -$gap;
+    margin-right: -$gap;
+    [class*= col] {
+      padding-left: $gap;
+      padding-right: $gap;
+      padding-bottom: 2*$gap;
+    }
+    @media (min-width: $breakpoint) {
+      display: flex;
+      @for $i from 1 through $columns {
+        .col-#{$i}-#{$columns} {
+          width: percentage( $i / $columns);
+        }
+      }
+    }
+  }
+}
